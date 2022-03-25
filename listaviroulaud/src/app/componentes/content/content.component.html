@@ -1,16 +1,11 @@
 <ul>
-    <li *ngFor="let al of arrAlumno">
-        <div class="row">
-            <div class="col-md-9">
-                <h5>{{al.apellido}}, {{al.nombre}}</h5>
-                <p><strong>Fecha de Nacimiento: </strong> {{al.fechaNacimineto}}</p>
-                <p><strong>Edad: </strong> {{al.edad}}</p>
-                <p><strong>Condicion: </strong> <span [ngClass]="al.condicion=='Regular'? 'alert-success':'alert-danger'">{{al.condicion}}</span></p>
-                <p><strong>Calificacion: </strong> <span [style.color]="al.calificacion<6? 'red':'green'">{{al.calificacion}}</span>  <span *ngIf="al.calificacion<6" class="alert-danger"> DESAPROBADO </span></p>
-            </div>
-            <div class="col-md-3">
-                <img [src]="al.foto" alt="foto">
-            </div>
-        </div>
+    <li *ngFor="let al of arrAlumno2" style="list-style-type: none;border: solid 1px; ">
+        <app-info-alumno nombre={{al.nombre}}
+                        apellido={{al.apellido}}
+                        [edad]=al.edad
+                        [fechaNacimiento]=al.fechaNacimiento 
+                        condicion={{al.condicion}}
+                        [calificacion]=al.calificacion
+                         foto={{al.foto}}></app-info-alumno>
     </li>
 </ul>

@@ -1,49 +1,54 @@
 import { Component, OnInit } from '@angular/core';
+import {Alumno} from '../../clases/alumno';
 
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
+
+
 export class ContentComponent implements OnInit {
 
-  arrAlumno:any[]=[
-    {
-      nombre:"Alumno 1",
-      apellido:"Apellido 1",
-      edad:38,
-      fechaNacimineto:"27/03/1979",
-      foto:"../../assets/img/usuario2.png",
-      condicion:"Regular",
-      calificacion:7
-    },
-    {
-      nombre:"Alumno 2",
-      apellido:"Apellido 2",
-      edad:30,
-      fechaNacimineto:"17/11/1983",
-      foto:"../../assets/img/usuario2.png",
-      condicion:"Libre",
-      calificacion:8
-    },
-    {
-      nombre:"Alumno 3",
-      apellido:"Apellido 3",
-      edad:23,
-      fechaNacimineto:"01/07/1979",
-      foto:"../../assets/img/usuario2.png",
-      condicion:"Regular",
-      calificacion:4
-    },
-    {
-      nombre:"Alumno 4",
-      apellido:"Apellido 4",
-      edad:44,
-      fechaNacimineto:"01/07/1979",
-      foto:"../../assets/img/usuario2.png",
-      condicion:"Regular",
-      calificacion:9
-    }]
+  arrAlumno2:Alumno[]=[
+    new Alumno(
+      "Alumno 1",
+      "Apellido 1",
+      38,
+      new Date("11/01/1980"),
+      "../../assets/img/usuario2.png",
+      "Regular",
+      7
+    ),
+    new Alumno(
+      "Alumno 2",
+      "Apellido 2",
+      30,
+      new Date("12/12/1999"),
+      "../../assets/img/usuario2.png",
+      "Regular",
+      8
+    ),
+    new Alumno(
+      "Alumno 4",
+      "Apellido 4",
+      44,
+      new Date("12/12/1999"),
+      "../../assets/img/usuario2.png",
+      "Regular",
+      4
+    ),
+    new Alumno(
+      "Alumno 3",
+      "Apellido 3",
+      23,
+      new Date("12/12/1999"),
+      "../../assets/img/usuario2.png",
+      "Libre",
+      8
+    ),
+  ];
+
 
   constructor() { }
 

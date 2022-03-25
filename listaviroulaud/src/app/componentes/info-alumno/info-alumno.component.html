@@ -1,0 +1,12 @@
+<div [ngClass]="calificacion>=6? 'alert-success':'alert-danger'" class="row">
+    <div class="col-md-9" style="border: 1px">
+        <h5>{{apellido}}, {{nombre}}</h5>
+        <p><strong>Fecha de Nacimiento: </strong> {{fechaNacimiento | date:'dd/MM/YYYY'}}</p>
+        <p><strong>Edad: </strong> {{edad}}</p>
+        <p><strong>Condicion: </strong> <span [ngClass]="condicion=='Regular'? 'alert-info':'alert-warning'">{{condicion}}</span></p>
+        <p><strong>Calificacion: </strong> <span [style.color]="calificacion<6? 'red':'green'">{{calificacion}}</span>  <span *ngIf="calificacion<6" class="alert-danger"> DESAPROBADO </span></p>
+    </div>
+    <div class="col-md-3">
+        <img [src]="foto" alt="foto">
+    </div>
+</div>
